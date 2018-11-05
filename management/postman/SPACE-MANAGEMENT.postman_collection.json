@@ -1,0 +1,378 @@
+{
+	"info": {
+		"_postman_id": "958e9d19-2830-4a20-bf20-7fac701f8484",
+		"name": "SPACE-MANAGEMENT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "missions",
+			"item": [
+				{
+					"name": "Update mission",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": 1,\n\t\"missionName\": \"Apollo 13\",\n\t\"imageryType\": \"MULTISPECTRAL\",\n\t\"missionStartDate\": \"1967-07-03T00:00\",\n\t\"missionFinishDate\": \"1069-09-01T00:00\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/missions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"missions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete mission",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"missionName\": \"Apollo 11\",\n\t\"imageryType\": \"MULTISPECTRAL\",\n\t\"missionStartDate\": null,\n\t\"missionFinishDate\": null\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/missions/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"missions",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all missions",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"missionName\": \"Apollo 11\",\n\t\"imageryType\": \"PANCHROMATIC\",\n\t\"missionStartDate\": \"1967-07-03T00:00\",\n\t\"missionFinishDate\": \"1069-09-01T00:00\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/missions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"missions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add mission",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"missionName\": \"Apollo 11\",\n\t\"imageryType\": \"PANCHROMATIC\",\n\t\"missionStartDate\": \"1967-07-03T00:00\",\n\t\"missionFinishDate\": \"1069-09-01T00:00\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/missions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"missions"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "Get all products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"missionName\": \"Apollo 13\",\n\t\"acquisitionTime\": \"1969-08-01T00:00\",\n\t\"price\": \"1337.05\",\n\t\"url\": \"http://superscret.pl\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get product by mission name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/products?missionName=Apollo 13",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "missionName",
+									"value": "Apollo 13"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete product",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"missionName\": \"Apollo 13\",\n\t\"acquisitionTime\": \"1969-08-01T00:00\",\n\t\"price\": \"1337.05\",\n\t\"url\": \"http://superscret.pl\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/products/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get products before time",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/products?beforeAcquisitionTime=1979-01-01T00:00",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "beforeAcquisitionTime",
+									"value": "1979-01-01T00:00"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add product with invalid URL",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"missionName\": \"Apollo 13\",\n\t\"acquisitionTime\": \"1969-08-01T00:00\",\n\t\"price\": \"1337.05\",\n\t\"url\": \"not-http://superscret.pl\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "orders",
+			"item": [
+				{
+					"name": "Make an order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"customerId\": \"12345\",\n\t\"products\": [\n\t    {\n\t        \"productId\": 2,\n\t        \"missionName\": \"Apollo 11\",\n\t        \"acquisitionTime\": \"1969-08-01T00:00:00\",\n\t        \"price\": 1337.05\n\t    },\n\t\t{\n\t        \"productId\": 5,\n\t        \"missionName\": \"Apollo 9\",\n\t        \"acquisitionTime\": \"1969-08-01T00:00:00\",\n\t        \"price\": 1337.05\n\t    }\n\t]\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve order for customer",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"customerId\": \"12345\",\n\t\"products\": [\n\t    {\n\t        \"id\": 2,\n\t        \"missionName\": \"Apollo 11\",\n\t        \"acquisitionTime\": \"1969-08-01T00:00:00\",\n\t        \"price\": 1337.05,\n\t        \"url\": \"http://superscret.pl\"\n\t    },\n\t\t{\n\t        \"id\": 5,\n\t        \"missionName\": \"Apollo 9\",\n\t        \"acquisitionTime\": \"1969-08-01T00:00:00\",\n\t        \"price\": 1337.05,\n\t        \"url\": \"http://superscret.pl\"\n\t    }\n\t]\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/orders/12345",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders",
+								"12345"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
